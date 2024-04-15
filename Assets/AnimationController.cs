@@ -137,6 +137,27 @@ public class AnimationController : MonoBehaviour
         {
             Prova.SetBool("Crounch", false);
         }
+
+        //slide
+
+        if (Input.GetKeyDown(KeyCode.E) && !Prova.GetBool("Slide"))
+        {
+            character.localScale = new Vector3(xValue, character.localScale.y, character.localScale.z);
+            Prova.SetBool("Slide", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.E) && Prova.GetBool("Slide"))
+        {
+            Prova.SetBool("Slide", false);
+        }
+        if (Input.GetKeyDown(KeyCode.R) && !Prova.GetBool("Slide"))
+        {
+            character.localScale = new Vector3(xValue * -1, character.localScale.y, character.localScale.z);
+            Prova.SetBool("Slide", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.R) && Prova.GetBool("Slide"))
+        {
+            Prova.SetBool("Slide", false);
+        }
     }
 }
 
